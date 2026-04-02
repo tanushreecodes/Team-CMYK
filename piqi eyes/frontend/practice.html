@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Reading Practice - WhatDoesDaFoxSay</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="practicestyles.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="Assets/Fat.png" alt="Fox" class="logo-icon-img">
+                    <img src="Assets/Title.svg" alt="DyslexicJit" class="logo-image">
+                </div>
+                <div class="nav-actions">
+                    <button
+                        class="nav-btn"
+                        id="backBtn"
+                        title="Back to Profile"
+                    >
+                        <i class="fas fa-arrow-left"></i>
+                    </button>
+                    <button class="nav-btn" id="homeBtn" title="Home">
+                        <i class="fas fa-home"></i>
+                    </button>
+                    <button class="nav-btn" id="settingsBtn" title="Settings">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="practice-main">
+            <div class="container">
+                <!-- Welcome Screen -->
+                <section class="welcome-screen" id="welcomeScreen">
+                    <div class="welcome-content">
+                        <div class="fox-coach">
+                            <div class="fox-mascot">
+                                <img src="Assets/celebrate.gif" alt="Celebrating Fox" class="fox-gif">
+                            </div>
+                            <div class="coach-message">
+                                <h1>Ready for Reading Practice?</h1>
+                                <p>
+                                    First, we'll calibrate eye tracking to help monitor your reading progress.
+                                    Then we'll work on reading a fun story together!
+                                </p>
+                            </div>
+                        </div>
+
+                        <button class="start-btn" id="startBtn">
+                            <i class="fas fa-eye"></i>
+                            <span>Start Calibration</span>
+                        </button>
+                    </div>
+                </section>
+
+                <!-- Practice Interface -->
+                <section
+                    class="practice-interface"
+                    id="practiceInterface"
+                    style="display: none"
+                >
+                    <!-- Progress Bar -->
+                    <div class="progress-container">
+                        <div class="progress-bar">
+                            <div
+                                class="progress-step active"
+                                data-stage="paragraph"
+                            >
+                                <div class="step-icon"><img src="Assets/Books.png" alt="Reading" class="step-icon-img"></div>
+                                <div class="step-label">Paragraph</div>
+                            </div>
+                            <div class="progress-line"></div>
+                            <div class="progress-step" data-stage="sentence">
+                                <div class="step-icon"><img src="Assets/Target.png" alt="Sentence" class="step-icon-img"></div>
+                                <div class="step-label">Sentence</div>
+                            </div>
+                            <div class="progress-line"></div>
+                            <div class="progress-step" data-stage="word">
+                                <div class="step-icon"><img src="Assets/Lightnight.png" alt="Word" class="step-icon-img"></div>
+                                <div class="step-label">Word</div>
+                            </div>
+                        </div>
+                        <div class="stage-indicator">
+                            <span id="currentStage">Paragraph Reading</span>
+                        </div>
+                    </div>
+
+                    <!-- Paragraph Stage -->
+                    <div class="stage-content" id="paragraphStage">
+                        <div class="stage-header">
+                            <h2>Read the Story</h2>
+                            <p>
+                                Take your time and read the entire paragraph at
+                                your own pace.
+                            </p>
+                        </div>
+
+                        <div class="reading-card">
+                            <div class="paragraph-text" id="paragraphText">
+                                The brave little fox loved to explore the forest
+                                every morning. She would walk along the winding
+                                paths, listening to the birds sing their
+                                beautiful songs. Sometimes she would find
+                                interesting rocks or colorful flowers that made
+                                her day special. The fox knew that reading books
+                                was just like exploring the forest - every page
+                                held new adventures and discoveries waiting to
+                                be found.
+                            </div>
+
+                            <div class="reading-controls">
+                                <!--<button
+                                    class="control-btn audio-btn"
+                                    id="paragraphAudioBtn"
+                                >
+                                    <i class="fas fa-volume-up"></i>
+                                    <span>Listen to Story</span>
+                                </button>-->
+                                <button
+                                    class="control-btn record-btn"
+                                    id="paragraphRecordBtn"
+                                >
+                                    <i class="fas fa-microphone"></i>
+                                    <span>Record Reading</span>
+                                </button>
+                            </div>
+
+                            <div
+                                class="reading-feedback"
+                                id="paragraphFeedback"
+                                style="display: none"
+                            >
+                                <div class="feedback-content">
+                                    <div class="feedback-icon"><img src="Assets/Star.png" alt="Great job!" class="feedback-icon-img"></div>
+                                    <div class="feedback-text">
+                                        <h4>Great reading!</h4>
+                                        <p>
+                                            You read the story beautifully!
+                                            Ready for the next step?
+                                        </p>
+                                    </div>
+                                </div>
+                                <button
+                                    class="action-btn next-stage-btn"
+                                    id="nextToSentence"
+                                >
+                                    <i class="fas fa-arrow-right"></i>
+                                    Continue to Sentences
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Sentence Stage -->
+                    <div
+                        class="stage-content"
+                        id="sentenceStage"
+                        style="display: none"
+                    >
+                        <div class="stage-header">
+                            <h2>Practice Each Sentence</h2>
+                            <p>
+                                Now let's focus on reading each sentence clearly
+                                and confidently.
+                            </p>
+                        </div>
+
+                        <div class="sentence-container">
+                            <div class="sentence-progress">
+                                <span id="sentenceCounter"
+                                    >Sentence 1 of 4</span
+                                >
+                            </div>
+
+                            <div class="sentence-card">
+                                <div class="sentence-text" id="currentSentence">
+                                    The brave little fox loved to explore the
+                                    forest every morning.
+                                </div>
+
+                                <div class="sentence-controls">
+                                    <!--<button
+                                        class="control-btn audio-btn"
+                                        id="sentenceAudioBtn"
+                                    >
+                                        <i class="fas fa-volume-up"></i>
+                                        <span>Listen</span>
+                                    </button>-->
+                                    <button
+                                        class="control-btn record-btn"
+                                        id="sentenceRecordBtn"
+                                    >
+                                        <i class="fas fa-microphone"></i>
+                                        <span>Read Sentence</span>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="sentence-feedback"
+                                    id="sentenceFeedback"
+                                    style="display: none"
+                                >
+                                    <div class="feedback-content">
+                                        <div class="feedback-icon"><img src="Assets/Target.png" alt="Perfect!" class="feedback-icon-img"></div>
+                                        <div class="feedback-text">
+                                            <h4>Perfect!</h4>
+                                            <p>
+                                                That sentence was read clearly!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="sentence-actions">
+                                        <button
+                                            class="action-btn secondary"
+                                            id="prevSentence"
+                                        >
+                                            <i class="fas fa-arrow-left"></i>
+                                            Previous
+                                        </button>
+                                        <button
+                                            class="action-btn primary"
+                                            id="nextSentence"
+                                        >
+                                            <i class="fas fa-arrow-right"></i>
+                                            Next Sentence
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Word Stage -->
+                    <div
+                        class="stage-content"
+                        id="wordStage"
+                        style="display: none"
+                    >
+                        <div class="stage-header">
+                            <h2>Focus on Challenging Words</h2>
+                            <p>
+                                Let's practice the trickier words from the story
+                                one by one.
+                            </p>
+                        </div>
+
+                        <div class="word-container">
+                            <div class="word-progress">
+                                <span id="wordCounter">Word 1 of 6</span>
+                            </div>
+
+                            <div class="word-practice-card">
+                                <div class="word-display">
+                                    <div class="word-text" id="practiceWord">
+                                        explore
+                                    </div>
+                                    <div
+                                        class="word-phonetics"
+                                        id="wordPhonetics"
+                                    >
+                                        /ɪkˈsplɔːr/
+                                    </div>
+                                </div>
+
+                                <div class="word-info">
+                                    <div class="word-meaning">
+                                        <h4>Meaning:</h4>
+                                        <p>
+                                            To travel through or investigate a
+                                            place to learn about it
+                                        </p>
+                                    </div>
+                                    <div class="word-context">
+                                        <h4>In the story:</h4>
+                                        <p>
+                                            "...loved to
+                                            <strong>explore</strong> the
+                                            forest..."
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="word-controls">
+                                    <button
+                                        class="control-btn hint-btn"
+                                        id="wordHintBtn"
+                                    >
+                                        <i class="fas fa-lightbulb"></i>
+                                        <span>Get Hint</span>
+                                    </button>
+                                    <!--<button
+                                        class="control-btn audio-btn"
+                                        id="wordAudioBtn">
+                                        <i class="fas fa-volume-up"></i>
+                                        <span>Listen</span>
+                                    </button>-->
+                                    <button
+                                        class="control-btn record-btn"
+                                        id="wordRecordBtn"
+                                    >
+                                        <i class="fas fa-microphone"></i>
+                                        <span>Practice Word</span>
+                                    </button>
+                                </div>
+
+                                <div
+                                    class="word-feedback"
+                                    id="wordFeedback"
+                                    style="display: none"
+                                >
+                                    <div class="feedback-content">
+                                        <div class="feedback-icon"><img src="Assets/Star.png" alt="Excellent!" class="feedback-icon-img"></div>
+                                        <div class="feedback-text">
+                                            <h4>Excellent!</h4>
+                                            <p>
+                                                You pronounced that word
+                                                perfectly!
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="word-actions">
+                                        <button
+                                            class="action-btn secondary"
+                                            id="prevWord"
+                                        >
+                                            <i class="fas fa-arrow-left"></i>
+                                            Previous
+                                        </button>
+                                        <button
+                                            class="action-btn primary"
+                                            id="nextWord"
+                                        >
+                                            <i class="fas fa-arrow-right"></i>
+                                            Next Word
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Practice Complete -->
+                    <div
+                        class="stage-content"
+                        id="completeStage"
+                        style="display: none"
+                    >
+                        <div class="completion-card">
+                            <div class="celebration-icon"><img src="Assets/celebrate.gif" alt="Celebration!" class="celebration-icon-img"></div>
+                            <h2>Practice Complete!</h2>
+                            <p>
+                                You did an amazing job reading today! You've
+                                improved so much!
+                            </p>
+
+                            <div class="completion-stats">
+                                <div class="stat-item">
+                                    <div class="stat-value" id="totalWords">
+                                        6
+                                    </div>
+                                    <div class="stat-label">
+                                        Words Practiced
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value" id="totalSentences">
+                                        4
+                                    </div>
+                                    <div class="stat-label">Sentences Read</div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-value" id="starsEarned">
+                                        12
+                                    </div>
+                                    <div class="stat-label">Stars Earned</div>
+                                </div>
+                            </div>
+
+                            <div class="completion-actions">
+                                <button
+                                    class="action-btn secondary"
+                                    id="practiceAgain"
+                                >
+                                    <i class="fas fa-redo"></i>
+                                    Practice Again
+                                </button>
+                                <button
+                                    class="action-btn primary"
+                                    id="backToProfile"
+                                >
+                                    <i class="fas fa-home"></i>
+                                    Back to Profile
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </main>
+
+        <!-- Hint Modal -->
+        <div class="hint-modal" id="hintModal" style="display: none">
+            <div class="hint-content">
+                <div class="hint-header">
+                    <h3><img src="Assets/Lightnight.png" alt="Hint" class="hint-icon-img"> Word Hint</h3>
+                    <button class="close-hint" id="closeHint">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+                <div class="hint-body" id="hintBody">
+                    <!-- Hint content will be populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+
+        <script src="practicescript.js"></script>
+    </body>
+</html>

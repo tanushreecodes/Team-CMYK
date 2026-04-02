@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Struggle Words - WhatDoesDaFoxSay</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="strugglestyles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+                            <div class="nav-logo">
+                    <img src="Assets/Fat.png" alt="Fox" class="logo-icon-img">
+                    <img src="Assets/Title.svg" alt="DyslexicJit" class="logo-image">
+                </div>
+            <div class="nav-actions">
+                <button class="nav-btn" id="backBtn" title="Back to Profile">
+                    <i class="fas fa-arrow-left"></i>
+                </button>
+                <button class="nav-btn" id="homeBtn" title="Home">
+                    <i class="fas fa-home"></i>
+                </button>
+                <button class="nav-btn" id="settingsBtn" title="Settings">
+                    <i class="fas fa-cog"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <main class="struggle-main">
+        <div class="container">
+            <!-- Header Section -->
+            <header class="struggle-header">
+                <div class="fox-coach">
+                    <div class="coach-message">
+                        <h1>Let's Practice Your Struggle Words!</h1>
+                        <p>Take your time and don't worry about making mistakes. I'm here to help!</p>
+                    </div>
+                </div>
+                
+                <div class="session-stats">
+                    <div class="stat-item">
+                        <div class="stat-icon"><img src="Assets/Books.png" alt="Books"></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="wordsRemaining">12</div>
+                            <div class="stat-label">Words Left</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><img src="Assets/Check.png" alt="Check"></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="wordsCompleted">0</div>
+                            <div class="stat-label">Completed</div>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-icon"><img src="Assets/Star.png" alt="Stars"></div>
+                        <div class="stat-info">
+                            <div class="stat-value" id="starsEarned">0</div>
+                            <div class="stat-label">Stars</div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <!-- Practice Area -->
+            <section class="practice-section">
+                <div class="practice-container">
+                    <!-- Word Display Card -->
+                    <div class="word-card" id="wordCard">
+                        <div class="word-header">
+                            <div class="difficulty-badge" id="difficultyBadge">Medium</div>
+                            <div class="word-number" id="wordNumber">Word 1 of 12</div>
+                        </div>
+                        
+                        <div class="word-display">
+                            <div class="word-text" id="currentWord">adventure</div>
+                            <div class="word-phonetics" id="wordPhonetics">/ədˈven.tʃər/</div>
+                        </div>
+                        
+                        <div class="word-meaning" id="wordMeaning">
+                            <h3>Definition:</h3>
+                            <p>An exciting or unusual experience</p>
+                        </div>
+                        
+                        <div class="word-sentence" id="wordSentence">
+                            <h3>Example:</h3>
+                            <p>"Going to the mountains was a great <strong>adventure</strong>!"</p>
+                        </div>
+                    </div>
+
+                    <!-- Practice Controls -->
+                    <div class="practice-controls">
+                        <button class="control-btn hint-btn" id="hintBtn">
+                            <i class="fas fa-lightbulb"></i>
+                            <span>Get Hint</span>
+                        </button>
+                        
+                        <button class="control-btn audio-btn" id="audioBtn">
+                            <i class="fas fa-volume-up"></i>
+                            <span>Listen</span>
+                        </button>
+                        
+                        <button class="control-btn practice-btn" id="practiceBtn">
+                            <i class="fas fa-microphone"></i>
+                            <span>Practice Reading</span>
+                        </button>
+                    </div>
+
+                    <!-- Reading Practice Interface -->
+                    <div class="reading-interface" id="readingInterface" style="display: none;">
+                        <div class="reading-prompt">
+                            <h3>Now it's your turn!</h3>
+                            <p>Try reading the word aloud. Take your time and don't worry if it's not perfect.</p>
+                        </div>
+                        
+                        <div class="recording-area">
+                            <button class="record-btn" id="recordBtn">
+                                <i class="fas fa-microphone"></i>
+                                <span>Click to Read</span>
+                            </button>
+                            <div class="recording-status" id="recordingStatus"></div>
+                        </div>
+                        
+                        <div class="reading-feedback" id="readingFeedback" style="display: none;">
+                            <div class="feedback-content">
+                                <div class="feedback-icon"><img src="Assets/Star.png" alt="Great job!" class="feedback-icon-img"></div>
+                                <div class="feedback-text">
+                                    <h4>Great job!</h4>
+                                    <p>You read that word really well!</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="reading-actions" id="readingActions" style="display: none;">
+                            <button class="action-btn retry-btn" id="retryBtn">
+                                <i class="fas fa-redo"></i>
+                                Try Again
+                            </button>
+                            <button class="action-btn next-btn" id="nextBtn">
+                                <i class="fas fa-arrow-right"></i>
+                                Next Word
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Hint Modal -->
+                    <div class="hint-modal" id="hintModal" style="display: none;">
+                        <div class="hint-content">
+                            <div class="hint-header">
+                                <h3><img src="Assets/Lightnight.png" alt="Hint" class="hint-icon-img"> Word Hint</h3>
+                                <button class="close-hint" id="closeHint">
+                                    <i class="fas fa-times"></i>
+                                </button>
+                            </div>
+                            <div class="hint-body">
+                                <div class="hint-tip" id="hintTip">
+                                    <p><strong>Break it down:</strong> ad-ven-ture</p>
+                                    <p><strong>Think of:</strong> "ad" + "venture" (like going on a journey)</p>
+                                </div>
+                                <div class="hint-visual" id="hintVisual">
+                                    <div class="syllable-breakdown">
+                                        <span class="syllable">ad</span>
+                                        <span class="syllable">ven</span>
+                                        <span class="syllable">ture</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Progress Section -->
+            <section class="progress-section">
+                <div class="progress-container">
+                    <h3>Session Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%"></div>
+                    </div>
+                    <div class="progress-text">
+                        <span id="progressPercent">0%</span> Complete
+                    </div>
+                </div>
+                
+                <div class="word-list">
+                    <h3>Words in This Session</h3>
+                    <div class="word-grid" id="wordGrid">
+                        <!-- Generated by JavaScript -->
+                    </div>
+                </div>
+            </section>
+
+            <!-- Session Complete Modal -->
+            <div class="session-modal" id="sessionModal" style="display: none;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <div class="celebration-icon"><img src="Assets/Star.png" alt="Celebration!" class="celebration-icon-img"></div>
+                        <h2>Session Complete!</h2>
+                        <p>You did an amazing job practicing your struggle words!</p>
+                    </div>
+                    
+                    <div class="modal-stats">
+                        <div class="modal-stat">
+                            <div class="modal-stat-value" id="modalWordsCompleted">12</div>
+                            <div class="modal-stat-label">Words Practiced</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-value" id="modalStarsEarned">24</div>
+                            <div class="modal-stat-label">Stars Earned</div>
+                        </div>
+                        <div class="modal-stat">
+                            <div class="modal-stat-value" id="modalAccuracy">85%</div>
+                            <div class="modal-stat-label">Accuracy</div>
+                        </div>
+                    </div>
+                    
+                    <div class="modal-actions">
+                        <button class="modal-btn secondary" id="reviewBtn">
+                            <i class="fas fa-eye"></i>
+                            Review Words
+                        </button>
+                        <button class="modal-btn primary" id="continueBtn">
+                            <i class="fas fa-arrow-right"></i>
+                            Continue Learning
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="strugglescript.js"></script>
+</body>
+</html>

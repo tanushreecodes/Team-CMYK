@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Profile - DyslexicJit</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="profilestyles.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="Assets/Fat.png" alt="Fox" class="logo-icon-img">
+                    <img src="Assets/Title.svg" alt="DyslexicJit" class="logo-image">
+                </div>
+                <div class="nav-actions">
+                    <button class="nav-btn" id="homeBtn">
+                        <i class="fas fa-home"></i>
+                    </button>
+                    <button class="nav-btn" id="settingsBtn">
+                        <i class="fas fa-cog"></i>
+                    </button>
+                    <button class="nav-btn" id="logoutBtn">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <main class="profile-main">
+            <div class="container">
+                <div class="profile-grid">
+                    <section class="welcome-section">
+                        <div class="welcome-card">
+                            <h1 class="welcome-title">
+                                Welcome Back, <span id="userName">Sahas</span>!
+                            </h1>
+                            <p class="welcome-subtitle">
+                                Let's get started on your next reading journey
+                            </p>
+
+                            <div class="quick-stats">
+                                <div class="stat-item">
+                                    <div class="stat-icon"><img src="Assets/Books.png" alt="Books"></div>
+                                    <div class="stat-info">
+                                        <div class="stat-value" id="totalWords">
+                                            248
+                                        </div>
+                                        <div class="stat-label">
+                                            Words Mastered
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon"><img src="Assets/Clock.png" alt="Clock"></div>
+                                    <div class="stat-info">
+                                        <div class="stat-value" id="totalTime">
+                                            12.5
+                                        </div>
+                                        <div class="stat-label">
+                                            Hours Practiced
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="stat-item">
+                                    <div class="stat-icon"><img src="Assets/Target.png" alt="Target"></div>
+                                    <div class="stat-info">
+                                        <div class="stat-value" id="accuracy">
+                                            87%
+                                        </div>
+                                        <div class="stat-label">Accuracy</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="action-buttons">
+                                <a
+                                    href="struggle.html"
+                                    class="action-btn struggle-btn"
+                                >
+                                    <div class="btn-content">
+                                        <i class="fas fa-book-medical"></i>
+                                        <div class="btn-text">
+                                            <h3>Struggle Words</h3>
+                                            <p>Practice challenging words</p>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-arrow-right btn-arrow"></i>
+                                </a>
+
+                                <a
+                                    href="practice.html"
+                                    class="action-btn practice-btn"
+                                >
+                                    <div class="btn-content">
+                                        <i class="fas fa-pencil-alt"></i>
+                                        <div class="btn-text">
+                                            <h3>Start Practice</h3>
+                                            <p>Begin your daily session</p>
+                                        </div>
+                                    </div>
+                                    <i class="fas fa-arrow-right btn-arrow"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <div class="goals-card">
+                            <div class="goals-header">
+                                <h3>
+                                    <span class="goals-icon"><img src="Assets/Target.png" alt="Goals" class="goals-target-icon"></span>
+                                    Weekly Goals
+                                </h3>
+                                <button class="goals-settings-btn" title="Goal Settings">
+                                    <i class="fas fa-cog"></i>
+                                </button>
+                            </div>
+
+                            <div class="goals-list">
+                                <!-- Goals will be dynamically populated by JavaScript -->
+                            </div>
+
+                            <button class="goals-action-btn">
+                                <i class="fas fa-plus"></i>
+                                Add New Goal
+                            </button>
+                        </div>
+                    </section>
+
+                    <aside class="sidebar-section">
+                        <div class="profile-card">
+                            <div class="profile-header">
+                                <div class="avatar" id="userAvatar">
+                                    <span>A</span>
+                                </div>
+                                <button class="edit-btn" id="editProfileBtn">
+                                    <i class="fas fa-pencil-alt"></i>
+                                </button>
+                            </div>
+                            <h2 class="profile-name" id="profileName">
+                                Alex Johnson
+                            </h2>
+                            <p class="profile-grade">Grade 3</p>
+
+                            <div class="profile-stats">
+                                <div class="profile-stat">
+                                    <div class="profile-stat-value">
+                                        🏆 Gold
+                                    </div>
+                                    <div class="profile-stat-label">Level</div>
+                                </div>
+                                <div class="profile-stat">
+                                    <div class="profile-stat-value">156</div>
+                                    <div class="profile-stat-label">
+                                        Total Stars
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="achievements">
+                                <h3>Recent Badges</h3>
+                                <div class="badge-list">
+                                    <span class="badge" title="7 Day Streak"
+                                        ><img src="Assets/Fire.png" alt="Fire" class="badge-icon"></span
+                                    >
+                                    <span
+                                        class="badge"
+                                        title="50 Words Mastered"
+                                        ><img src="Assets/Star.png" alt="Star" class="badge-icon"></span
+                                    >
+                                    <span class="badge" title="Perfect Week"
+                                        ><img src="Assets/100.png" alt="100" class="badge-icon"></span
+                                    >
+                                    <span class="badge" title="Speed Reader"
+                                        ><img src="Assets/Lightnight.png" alt="Lightning" class="badge-icon"></span
+                                    >
+                                </div>
+                            </div>
+                        </div>
+                        <div class="streak-card">
+                            <div class="streak-header">
+                                <h3>
+                                    <span class="streak-icon"><img src="Assets/Fire.png" alt="Streak" class="streak-fire-icon"></span>
+                                    Daily Streak
+                                </h3>
+                                <div class="streak-count">
+                                    <span class="streak-number" id="streakDays"
+                                        >7</span
+                                    >
+                                    <span class="streak-label">days</span>
+                                </div>
+                            </div>
+
+                            <div class="progress-bar-container">
+                                <div class="progress-label">
+                                    <span>Today's Goal</span>
+                                    <span id="progressPercent">75%</span>
+                                </div>
+                                <div class="progress-bar">
+                                    <div
+                                        class="progress-fill"
+                                        id="progressFill"
+                                        style="width: 75%"
+                                    ></div>
+                                </div>
+                                <p class="progress-text">
+                                    15 more words to complete today!
+                                </p>
+                            </div>
+
+                            <!-- Calendar -->
+                            <div class="calendar">
+                                <h4>This Week</h4>
+                                <div class="calendar-grid" id="calendarGrid">
+                                    <!-- Generated by JS -->
+                                </div>
+                            </div>
+                        </div>
+                    </aside>
+                </div>
+            </div>
+        </main>
+
+        <script src="profilescript.js"></script>
+    </body>
+</html>

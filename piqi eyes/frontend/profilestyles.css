@@ -1,0 +1,849 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* New Color Palette */
+    --primary-orange: #F68E3F;
+    --secondary-orange: #FEF9CF;
+    --dark-orange: #D47533;
+    --accent-coral: #F289AB;
+    --dark-coral: #C26D8C;
+    --light-orange: #f9f0ea;
+    --cream: #f9f0ea;
+    --cyan: #67CDF6;
+    --green: #8AC641;
+    --text-primary: #2D2D2D;
+    --text-secondary: #5A5A5A;
+    --background: #f9f0ea;
+    --card-background: #FFFFFF;
+    --border: #FEF9CF;
+    --shadow: 0 4px 12px rgba(246, 142, 63, 0.08);
+    --shadow-md: 0 8px 16px rgba(246, 142, 63, 0.12);
+    --shadow-lg: 0 12px 24px rgba(246, 142, 63, 0.15);
+}
+
+body {
+    font-family: 'Atkinson Hyperlegible', sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--background);
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(20px);
+    z-index: 1000;
+    box-shadow: var(--shadow);
+}
+
+.nav-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-coral);
+    cursor: pointer;
+}
+
+.nav-logo .logo-image {
+    height: 30px !important;
+    width: auto;
+    max-width: 150px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.nav-logo .logo-icon-img {
+    height: 35px;
+    width: 35px;
+    object-fit: contain;
+    margin-right: 0.5rem;
+}
+
+.logo-icon {
+    font-size: 2rem;
+}
+
+.nav-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1.25rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+    background: var(--light-orange);
+    color: var(--primary-orange);
+}
+
+/* Main Layout */
+.profile-main {
+    padding-top: 100px;
+    min-height: 100vh;
+}
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr 400px;
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+/* Welcome Section */
+.welcome-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.welcome-card {
+    background: white;
+    border-radius: 25px;
+    padding: 3rem;
+    box-shadow: var(--shadow-md);
+}
+
+.fox-mascot {
+    font-size: 4rem;
+    margin-bottom: 1.5rem;
+    display: inline-block;
+}
+
+@keyframes wave {
+    0%, 100% { transform: rotate(0deg); }
+    25% { transform: rotate(-10deg); }
+    75% { transform: rotate(10deg); }
+}
+
+.welcome-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    margin-bottom: 0.5rem;
+}
+
+.welcome-title span {
+    color: var(--primary-orange);
+}
+
+.welcome-subtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    margin-bottom: 3rem;
+}
+
+/* Quick Stats */
+.quick-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding: 2rem;
+    background: var(--light-orange);
+    border-radius: 20px;
+}
+
+.stat-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.stat-icon {
+    font-size: 2.8125rem;
+}
+
+.stat-icon img {
+    width: 2.8125rem;
+    height: 2.8125rem;
+    object-fit: contain;
+}
+
+.badge-icon {
+    width: 3rem !important;
+    height: 3rem !important;
+    object-fit: contain;
+}
+
+.streak-fire-icon {
+    width: 1.8125rem;
+    height: 1.8125rem;
+    object-fit: contain;
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent-coral);
+}
+
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 1.5rem;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+    border-radius: 20px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow);
+    border: 2px solid transparent;
+}
+
+.struggle-btn {
+    background: linear-gradient(135deg, var(--cyan) 0%, #4BA8D6 100%);
+    border-color: var(--cyan);
+    color: white;
+}
+
+.struggle-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, #4BA8D6 0%, #3A8FBD 100%);
+}
+
+.practice-btn {
+    background: linear-gradient(135deg, var(--primary-orange) 0%, var(--accent-coral) 100%);
+    color: white;
+}
+
+.practice-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+    background: linear-gradient(135deg, var(--dark-orange) 0%, var(--dark-coral) 100%);
+}
+
+.btn-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.action-btn i:first-child {
+    font-size: 2.5rem;
+}
+
+.struggle-btn i:first-child {
+    color: white;
+}
+
+.practice-btn i:first-child {
+    color: white;
+}
+
+.btn-text h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.25rem;
+}
+
+.struggle-btn .btn-text h3 {
+    color: white;
+}
+
+.practice-btn .btn-text h3 {
+    color: white;
+}
+
+.btn-text p {
+    font-size: 1rem;
+    opacity: 0.8;
+}
+
+.struggle-btn .btn-text p {
+    color: white;
+}
+
+.practice-btn .btn-text p {
+    color: white;
+}
+
+.btn-arrow {
+    font-size: 1.5rem;
+    opacity: 0.6;
+}
+
+.struggle-btn .btn-arrow {
+    color: white;
+}
+
+/* Sidebar */
+.sidebar-section {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Profile Card */
+.profile-card {
+    background: white;
+    border-radius: 25px;
+    padding: 2.5rem;
+    box-shadow: var(--shadow-md);
+    text-align: center;
+}
+
+.profile-header {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary-orange), var(--accent-coral));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 3rem;
+    font-weight: 700;
+    color: white;
+    margin: 0 auto;
+    box-shadow: 0 8px 20px rgba(255, 107, 53, 0.3);
+}
+
+.edit-btn {
+    position: absolute;
+    top: 0;
+    right: calc(50% - 70px);
+    background: var(--accent-coral);
+    color: white;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+}
+
+.edit-btn:hover {
+    background: var(--dark-coral);
+    transform: scale(1.1);
+}
+
+.profile-name {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--primary-orange);
+    margin-bottom: 0.25rem;
+}
+
+.profile-grade {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.profile-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.profile-stat {
+    padding: 1rem;
+    background: var(--light-orange);
+    border-radius: 15px;
+}
+
+.profile-stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent-coral);
+    margin-bottom: 0.25rem;
+}
+
+.profile-stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.achievements h3 {
+    font-size: 1.1rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+}
+
+.badge-list {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.badge {
+    font-size: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.badge:hover {
+    transform: scale(1.2);
+}
+
+/* Streak Card */
+.streak-card {
+    background: white;
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+    overflow: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.streak-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.streak-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-orange);
+}
+
+.streak-icon {
+    font-size: 1.5rem;
+}
+
+.streak-count {
+    text-align: right;
+}
+
+.streak-number {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent-coral);
+    display: block;
+    line-height: 1;
+}
+
+.streak-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+/* Progress Bar */
+.progress-bar-container {
+    margin-bottom: 2rem;
+}
+
+.progress-label {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+}
+
+.progress-bar {
+    height: 12px;
+    background: var(--light-orange);
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary-orange), var(--accent-coral));
+    border-radius: 10px;
+    transition: width 1s ease;
+}
+
+.progress-text {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    text-align: center;
+}
+
+/* Calendar */
+.calendar {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.calendar h4 {
+    font-size: 1rem;
+    color: var(--primary-orange);
+    margin-bottom: 1rem;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(28, minmax(45px, 1fr));
+    gap: 0.4rem;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-bottom: 0.5rem;
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-orange) var(--light-orange);
+}
+
+.calendar-grid::-webkit-scrollbar {
+    height: 6px;
+}
+
+.calendar-grid::-webkit-scrollbar-track {
+    background: var(--light-orange);
+    border-radius: 3px;
+}
+
+.calendar-grid::-webkit-scrollbar-thumb {
+    background: var(--primary-orange);
+    border-radius: 3px;
+}
+
+.calendar-grid::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-coral);
+}
+
+.calendar-day {
+    aspect-ratio: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 45px;
+    min-height: 45px;
+    max-width: none;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.calendar-month-label {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.5rem;
+    color: var(--text-secondary);
+    font-weight: 600;
+    background: white;
+    padding: 0 0.25rem;
+    border-radius: 3px;
+    white-space: nowrap;
+}
+
+.calendar-day-label {
+    font-size: 0.6rem;
+    color: var(--text-secondary);
+    margin-bottom: 0.2rem;
+    line-height: 1;
+}
+
+.calendar-day-number {
+    font-size: 0.8rem;
+    line-height: 1;
+}
+
+.calendar-day.empty {
+    background: transparent;
+}
+
+.calendar-day.inactive {
+    background: #F5F5F5;
+    color: #CACACA;
+}
+
+.calendar-day.completed {
+    background: linear-gradient(135deg, var(--primary-orange), var(--accent-coral));
+    color: white;
+}
+
+.calendar-day.today {
+    background: var(--light-orange);
+    border: 2px solid var(--accent-coral);
+    color: var(--accent-coral);
+}
+
+.calendar-day:hover:not(.empty) {
+    transform: scale(1.1);
+}
+
+/* Goals Card */
+.goals-card {
+    background: white;
+    border-radius: 25px;
+    padding: 2rem;
+    box-shadow: var(--shadow-md);
+}
+
+.goals-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.goals-header h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.25rem;
+    color: var(--primary-orange);
+}
+
+.goals-target-icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    object-fit: contain;
+}
+
+.goals-settings-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 1rem;
+    cursor: pointer;
+    padding: 0.5rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.goals-settings-btn:hover {
+    background: var(--light-orange);
+    color: var(--primary-orange);
+}
+
+.goals-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.goal-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 15px;
+    background: var(--light-orange);
+    transition: all 0.3s ease;
+}
+
+.goal-item.completed {
+    background: linear-gradient(135deg, var(--accent-coral), var(--dark-coral));
+    color: white;
+}
+
+.goal-item.active {
+    background: linear-gradient(135deg, var(--secondary-orange), var(--light-orange));
+    border: 2px solid var(--primary-orange);
+}
+
+.goal-check {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.goal-item.completed .goal-check {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+}
+
+.goal-progress-ring {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--card-background);
+    position: relative;
+    overflow: hidden;
+}
+
+.goal-progress-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background: var(--primary-orange);
+    border-radius: 50%;
+    transition: width 0.5s ease;
+}
+
+.goal-progress-60 {
+    width: 60%;
+}
+
+.goal-progress-20 {
+    width: 20%;
+}
+
+.goal-content {
+    flex: 1;
+}
+
+.goal-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+}
+
+.goal-item.completed .goal-title {
+    color: white;
+}
+
+.goal-progress {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+}
+
+.goal-item.completed .goal-progress {
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.goals-action-btn {
+    width: 100%;
+    padding: 1rem;
+    background: transparent;
+    border: 2px dashed var(--primary-orange);
+    border-radius: 15px;
+    color: var(--primary-orange);
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.goals-action-btn:hover {
+    background: var(--light-orange);
+    border-color: var(--dark-orange);
+    color: var(--dark-orange);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .profile-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .sidebar-section {
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .calendar-grid {
+        gap: 0.3rem;
+        grid-template-columns: repeat(28, minmax(40px, 1fr));
+    }
+    
+    .calendar-day {
+        min-width: 40px;
+        min-height: 40px;
+        font-size: 0.65rem;
+    }
+    
+    .calendar-day-label {
+        font-size: 0.55rem;
+    }
+    
+    .calendar-day-number {
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .welcome-title {
+        font-size: 2rem;
+    }
+    
+    .quick-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .profile-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .streak-card {
+        padding: 1.5rem;
+    }
+    
+    .calendar-grid {
+        gap: 0.25rem;
+        grid-template-columns: repeat(28, minmax(35px, 1fr));
+    }
+    
+    .calendar-day {
+        min-width: 35px;
+        min-height: 35px;
+        font-size: 0.6rem;
+        border-radius: 6px;
+    }
+    
+    .calendar-month-label {
+        font-size: 0.45rem;
+        top: -10px;
+    }
+}

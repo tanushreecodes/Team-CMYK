@@ -1,0 +1,151 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>WhatDoDaFoxSay - Your Reading Coach</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&display=swap"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="styles.css" />
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+        <script src="https://webgazer.cs.brown.edu/webgazer.js"></script>
+    </head>
+    <body>
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="Assets/Fat.png" alt="Fox" class="logo-icon-img">
+                    <img src="Assets/Title.svg" alt="DyslexicJit" class="logo-image">
+                </div>
+                <div class="nav-actions">
+                    <button id="loginBtn" class="login-btn">
+                        <i class="fas fa-sign-in-alt"></i>
+                        <span>Login</span>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Read with Confidence, Grow with Patience</h1>
+                    <p class="hero-subtitle">
+                        A calm, focused space where you practice reading at your
+                        own pace. Build skills, track progress, and celebrate
+                        every improvement.
+                    </p>
+                    <div class="hero-actions">
+                        <button id="startReadingBtn" class="btn-primary">
+                            <i class="fas fa-rocket"></i>
+                            Start Reading
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-play-circle"></i>
+                            Watch Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="floating-card">
+                        <i class="fas fa-book-open"></i>
+                        <span>Word Practice</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-microphone"></i>
+                        <span>Voice Reading</span>
+                    </div>
+                    <div class="floating-card">
+                        <i class="fas fa-chart-line"></i>
+                        <span>Track Progress</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="features">
+            <div class="container">
+                <h2>How It Works</h2>
+                <div class="features-grid">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-book-reader"></i>
+                        </div>
+                        <h3>Practice Words</h3>
+                        <p>
+                            Work on challenging words at your own pace with
+                            helpful hints and support.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-volume-up"></i>
+                        </div>
+                        <h3>Read Aloud</h3>
+                        <p>
+                            Use voice reading to practice pronunciation and
+                            build confidence speaking.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h3>Track Progress</h3>
+                        <p>
+                            See your improvements over time and celebrate every
+                            milestone achieved.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="voice-query" id="voiceSection">
+            <div class="container">
+                <div class="voice-interface">
+                    <h2>Meet Your Reading Coach</h2>
+                    <p>
+                        A friendly fox companion that helps you practice reading
+                        with patience and encouragement
+                    </p>
+
+                    <div class="stats-preview">
+                        <div class="stat-card">
+                            <div class="stat-icon"><img src="Assets/Books.png" alt="Reading"></div>
+                            <div class="stat-number" id="wordsCount">1,234</div>
+                            <div class="stat-label">Words Practiced</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><img src="Assets/Target.png" alt="Target"></div>
+                            <div class="stat-number" id="kidsCount">567</div>
+                            <div class="stat-label">Happy Readers</div>
+                        </div>
+                        <div class="stat-card">
+                            <div class="stat-icon"><img src="Assets/Star.png" alt="Achievement"></div>
+                            <div class="stat-number" id="starsCount">8,901</div>
+                            <div class="stat-label">Stars Earned</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <div class="container">
+                <p>Made with ❤️ for awesome readers</p>
+            </div>
+        </footer>
+
+        <script src="script.js"></script>
+    </body>
+</html>
