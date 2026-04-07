@@ -1,56 +1,164 @@
-# Team-CMYK
-Mr. Piqi Eyes: Read with Confidence, Grow with Patience
-In a world that moves fast, children with dyslexia are often left feeling like they are "stalling." Dyslexia affects 1 in 5 children, and the primary hurdle isn't just reading—it's the anxiety, frustration, and loss of self-confidence that comes with traditional testing.
+# Mr. Piqi Eyes
 
-Mr. Piqi Eyes was built to change the narrative. We believe:
+### Read with Confidence. Grow with Patience.
 
-Dyslexia is a different pattern of learning, not a limitation.
+---
 
-Accessibility is about personalization, not simplification.
+## 🌍 Overview
 
-Technology should be empathetic, detecting not just errors, but emotions.
+In a fast-moving world, children with dyslexia are often made to feel like they are falling behind.
+But the truth is simple:
 
-🧠 The Inspiration
-As a team, we’ve watched siblings and friends struggle with the "skipped line" or the long pause that feels like an eternity. We asked ourselves:
+> **Dyslexia is not a limitation — it is a different way of learning.**
 
-"What if learning to read felt more like a conversation with a friend and less like a test in a classroom?"
+**Mr. Piqi Eyes** is an AI-powered reading companion designed to support, guide, and encourage children through their reading journey — with empathy, patience, and intelligence.
 
-We created Mr. Piqi Eyes to bridge the gap between high-end AI and human empathy—turning a frustrating chore into a playful, supportive ritual.
+Instead of testing children, we **walk with them**.
 
-🛠️ How it Works 
-We’ve combined three powerful layers of technology to act as a "digital companion" for the reader:
+---
 
-1. The Listening Ear (Speech & Fluency)
-Using ElevenLabs and Gemini API, the app doesn't just listen for correct words; it understands the rhythm of the child. It identifies tricky sections and provides adaptive feedback that encourages the child to try again with patience, rather than correcting them harshly.
+## 💡 Our Vision
 
-2. The Attentive Guide (Gaze Tracking)
-The "Focus Funnel" uses MediaPipe Iris to track where the child’s eyes are lingering. If a child gets stuck on a specific word or skips a paragraph, the AI notices and gently guides their focus back, reducing the cognitive load that causes burnout.
+We believe:
 
-3. The Emotional Compass (Micro-Expression Analysis)
-Through OpenFace, we analyze facial Action Units (AUs) to detect "Silent Frustration." If the child looks tired or confused, Mr. Piqi Eyes triggers a "Brain Break" or an encouraging animation.
+* Learning should feel like a **conversation**, not a test
+* Technology should understand **emotions**, not just mistakes
+* Accessibility means **personalization**, not simplification
 
-👀 Parent Mode: Building Parent Trust
-We realized that for a child to succeed, the parent needs peace of mind. Fox Mode is a serene space where parents can see the "science behind the magic."
+---
 
-Transparency: We show the research and the accuracy of our models.
+## 🧠 The Inspiration
 
-Insights: Instead of just a "score," parents see a journey of progress.
+We’ve seen children struggle with:
 
-Privacy First: All facial and eye inference happens locally on-device. We process the empathy, but we don't store the video.
+* Skipping lines
+* Getting stuck on words
+* Losing confidence
 
-🌟 Key Benefits
-Inclusive Design: Uses the Atkinson Hyperlegible font and a "Pastel Farm" palette to reduce visual crowding (a common struggle for neurodivergent readers).
+And we asked:
 
-Secure Identity: Powered by Auth0, ensuring that every child’s data is protected by enterprise-grade security (Passkeys, MFA, and ReCaptcha).
+> *“What if reading felt like a friend helping you… instead of a teacher judging you?”*
 
-Gamified Joy: UX designed to feel like a game, removing the "fear of failure."
+That question became **Mr. Piqi Eyes**.
 
-🚀 Future Roadmap
-Voice Emotion Modeling: Adding richer feedback based on the child's vocal tone.
+---
 
-Teacher Dashboards: Enabling classroom-wide analytics for early intervention.
+## 🛠️ How It Works
 
-Stutter Detection: Integrating fine-tuned Efficient-Stuttering-Event-Detection models.
+Our system acts as a **digital companion**, built using multiple intelligent layers:
 
-❤️ Why Mr. Piqi Eyes?
-Because no child should feel "slow" just because they learn differently. With patience and the right tools, every child can find their voice.
+---
+
+### 🎤 1. The Listening Companion (Speech Intelligence)
+
+* Uses **speech recognition (browser-based / AI-powered)**
+* Understands how a child reads — not just what they read
+* Detects hesitation, flow, and difficulty areas
+* Provides **gentle, encouraging feedback**
+
+---
+
+### 👁️ 2. The Attentive Guide (Eye Tracking)
+
+* Tracks where the child is looking on screen
+* Identifies:
+
+  * skipped lines
+  * stuck words
+* Helps guide attention back naturally
+* Reduces cognitive overload
+
+---
+
+### 😊 3. The Emotional Compass (Future Layer)
+
+* Detects signs of frustration or confusion
+* Suggests breaks or encouragement
+* Focuses on **emotional well-being**, not just performance
+
+---
+
+## 👨‍👩‍👧 Parent Mode — Building Trust
+
+We created a dedicated space for parents:
+
+* 📊 **Progress Tracking** — not just scores, but growth
+* 🔍 **Transparency** — how the system works
+* 🔒 **Privacy First** — no video stored, all processing local
+
+---
+
+## 🌟 Key Features
+
+* 🧩 **Inclusive Design**
+
+  * Dyslexia-friendly fonts
+  * Soft color palette
+  * Reduced visual clutter
+
+* 🔐 **Secure Authentication**
+
+  * Powered by Auth0
+  * Safe and protected user data
+
+* 🎮 **Gamified Experience**
+
+  * Encouraging UI
+  * Removes fear of failure
+
+* 🎤 **Real-Time Feedback**
+
+  * Immediate response to speech
+  * Adaptive learning flow
+
+---
+
+## 🚀 Tech Stack
+
+* **Frontend:** HTML, CSS, JavaScript
+* **Backend:** Python (Flask)
+* **AI:** Gemini API
+* **Speech:** Browser Speech API (replacing external STT)
+* **Eye Tracking:** WebGazer / MediaPipe
+* **Authentication:** Auth0
+* **Database:** Firebase / Firestore
+
+---
+
+## 🚀 Future Roadmap
+
+* 🎙️ Voice Emotion Detection
+* 🧑‍🏫 Teacher Dashboard
+* 🧠 Advanced Reading Analytics
+* 🔍 Stutter Detection Models
+* 📱 Mobile Optimization
+
+---
+
+## ❤️ Why Mr. Piqi Eyes?
+
+Because:
+
+> No child should feel “slow” for learning differently.
+
+With the right support, every child can:
+
+* build confidence
+* enjoy reading
+* find their voice
+
+---
+
+## 🌐 Live Demo
+
+👉 [https://your-netlify-link.netlify.app](https://piqieyes.netlify.app/)
+
+---
+
+## 🤝 Contributing
+
+We welcome ideas, improvements, and collaborations!
+Let’s build a more inclusive future together.
+
+---
+
