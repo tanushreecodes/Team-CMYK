@@ -154,11 +154,3 @@ With the right support, every child can:
 👉 [https://your-netlify-link.netlify.app](https://piqieyes.netlify.app/)
 
 ---
-
-## 🤝 Contributing
-
-We welcome ideas, improvements, and collaborations!
-Let’s build a more inclusive future together.
-
----
-
