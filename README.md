@@ -1,4 +1,4 @@
-# Mr. Piqi Eyes
+# Piqi Eyes
 
 ### Read with Confidence. Grow with Patience.
 
@@ -11,7 +11,7 @@ But the truth is simple:
 
 > **Dyslexia is not a limitation — it is a different way of learning.**
 
-**Mr. Piqi Eyes** is an AI-powered reading companion designed to support, guide, and encourage children through their reading journey — with empathy, patience, and intelligence.
+**Piqi Eyes** is an AI-powered reading companion designed to support, guide, and encourage children through their reading journey — with empathy, patience, and intelligence.
 
 Instead of testing children, we **walk with them**.
 
@@ -39,7 +39,7 @@ And we asked:
 
 > *“What if reading felt like a friend helping you… instead of a teacher judging you?”*
 
-That question became **Mr. Piqi Eyes**.
+That question became **Piqi Eyes**.
 
 ---
 
